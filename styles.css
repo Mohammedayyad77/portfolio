@@ -1993,70 +1993,258 @@ footer::before {
 }
 
 /* ================================================
-   RESPONSIVE
+   HAMBURGER MENU
+   ================================================ */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1.5px solid rgba(168, 85, 247, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+.nav-hamburger:hover {
+    border-color: var(--primary-color);
+    background: rgba(168, 85, 247, 0.08);
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: var(--text-main);
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(.4,0,.2,1);
+    transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile sliding menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: rgba(10, 5, 16, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.mobile-menu.open {
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-menu a {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: -1px;
+    padding: 12px 32px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:active {
+    color: var(--text-main);
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.2);
+}
+
+[data-theme="light"] .mobile-menu {
+    background: rgba(250, 247, 255, 0.97);
+}
+
+/* ================================================
+   RESPONSIVE — Tablet (≤ 900px)
    ================================================ */
 @media (max-width: 900px) {
+    main { padding: 0 28px; }
+
     .hero h1 { font-size: 3.5rem; }
+    .hero .summary { font-size: 1rem; }
+
+    .section { padding: 100px 0; }
+    .section-title { font-size: 2.5rem; }
 
     .about-stats { grid-template-columns: repeat(3, 1fr); }
 
     .skills-showcase-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
 
+    /* Career panel: hide stats column, let body expand */
+    .cht-panel-inner {
+        grid-template-columns: 130px 1fr;
+    }
+    .cht-panel-stats { display: none; }
+
     nav { top: 10px; max-width: 95%; }
 }
 
+/* ================================================
+   RESPONSIVE — Mobile (≤ 768px)
+   ================================================ */
 @media (max-width: 768px) {
-    main { padding: 0 20px; }
+    main { padding: 0 18px; }
 
-    .nav-links { display: none; }
-
-    nav { top: 10px; max-width: 92%; }
-
-    .nav-content { padding: 12px 24px; }
-
-    .hero h1 { font-size: 2.8rem; }
-    .hero .title { font-size: 1.4rem; }
-
-    .section-title { font-size: 2.2rem; }
-    .section { padding: 80px 0; }
-
-    .about-stats { grid-template-columns: 1fr; gap: 12px; }
-
-    /* Skills — stack to single column on mobile */
-    .skills-showcase-grid { grid-template-columns: 1fr; gap: 16px; }
-
-    /* Career horizontal timeline — responsive spacing */
-    .cht-wrapper { padding: 0 44px; }
-    .cht-node { flex: 0 0 340px; }
-    .cht-card { width: 295px; padding: 16px; }
-    .cht-track { padding: 220px 40px; }
-    .cht-node--above .cht-card { margin-bottom: 44px; }
-    .cht-node--below .cht-card { margin-top: 44px; }
-    .cht-nav { width: 40px; height: 40px; font-size: 0.9rem; }
-    .cht-nav--prev { left: 2px; }
-    .cht-nav--next { right: 2px; }
-    .cht-card-icon { width: 38px; height: 38px; font-size: 1rem; }
-    .career-subtitle { font-size: 0.95rem; margin-bottom: 30px; }
-
-    /* Hide custom cursor on mobile */
+    /* Hide cursor on touch devices */
     .cursor-dot, .cursor-ring { display: none; }
     body { cursor: auto; }
     a, button, .btn { cursor: pointer; }
+
+    /* ─── Nav ─── */
+    nav { top: 10px; max-width: 92%; }
+    .nav-content { padding: 10px 20px; gap: 12px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .theme-toggle { margin-left: 0; }
+
+    /* ─── Hero ─── */
+    .hero { padding-top: 110px; min-height: auto; }
+    .hero h1 { font-size: 2.8rem; letter-spacing: -2px; }
+    .hero .title { font-size: 1.25rem; }
+    .hero .summary { font-size: 0.95rem; max-width: 100%; }
+    .greeting { font-size: 0.85rem; letter-spacing: 2px; }
+    .greeting::before { width: 24px; }
+
+    .contact-links { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .socials { flex-wrap: wrap; }
+    .btn.primary, .btn.secondary { width: 100%; justify-content: center; }
+
+    /* ─── Sections ─── */
+    .section { padding: 80px 0; }
+    .section-title { font-size: 2rem; letter-spacing: -1px; }
+
+    /* ─── About ─── */
+    .about-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .about-stat { padding: 16px 10px; }
+    .about-stat .stat-number { font-size: 1.5rem; }
+
+    /* ─── Skills ─── */
+    .skills-showcase-grid { grid-template-columns: 1fr; gap: 16px; }
+    .skill-chips-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* ─── Career ─── */
+    .career-subtitle { font-size: 0.95rem; margin-bottom: 24px; }
+
+    /* Rail: compress stop labels */
+    .cht-stop-label { display: none; }
+    .cht-stop-year { font-size: 0.7rem; }
+    .cht-stop-dot { width: 42px; height: 42px; font-size: 1rem; }
+    .cht-rail { padding: 32px 0 24px; }
+    .cht-rail-wrapper { gap: 10px; margin-bottom: 24px; }
+    .cht-nav { width: 38px; height: 38px; font-size: 0.85rem; }
+
+    /* Panel: full-width single column */
+    .cht-panel { padding: 20px; }
+    .cht-panel-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .cht-panel-stats { display: none; }
+    .cht-panel-left {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding-top: 0;
+    }
+    .cht-panel-meta { align-items: flex-start; text-align: left; }
+    .cht-card-icon { width: 48px; height: 48px; flex-shrink: 0; }
+    .cvt-card__title { font-size: 1rem; }
+    .cvt-card__org { font-size: 0.82rem; }
+    .cvt-card__details li { font-size: 0.75rem; }
+    .cvt-featured-badge { font-size: 0.7rem; padding: 5px 12px; }
+
+    /* ─── Projects & Achievements ─── */
+    .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+    .achievements-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ─── Footer ─── */
+    footer { padding: 60px 20px; }
+    .footer-contact { gap: 16px; }
+    .footer-contact a, .footer-contact span { font-size: 0.85rem; }
 }
 
+/* ================================================
+   RESPONSIVE — Small phones (≤ 480px)
+   ================================================ */
 @media (max-width: 480px) {
-    .hero h1 { font-size: 2.2rem; letter-spacing: -1px; }
+    main { padding: 0 14px; }
 
-    .contact-links { flex-direction: column; align-items: flex-start; }
+    /* ─── Hero ─── */
+    .hero h1 { font-size: 2.2rem; letter-spacing: -1.5px; }
+    .hero .title { font-size: 1.1rem; }
+    .hero-content { max-width: 100%; }
 
-    .skills-showcase-grid { grid-template-columns: 1fr; }
+    /* ─── Sections ─── */
+    .section-title { font-size: 1.75rem; }
+    .section { padding: 70px 0; }
+
+    /* ─── Nav ─── */
+    .nav-content { padding: 10px 16px; }
+    .logo { font-size: 1.2rem; }
+
+    /* ─── About ─── */
+    .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .about-stat .stat-number { font-size: 1.3rem; }
+    .about-stat .stat-label { font-size: 0.68rem; }
+    .glass-card { padding: 22px; }
+
+    /* ─── Skills ─── */
     .skill-chips-grid { grid-template-columns: repeat(2, 1fr); }
+    .skill-cat__header { padding: 20px 20px 12px; }
+    .skill-bars { padding: 0 20px 20px; }
+    .skill-strength-list { padding: 0 20px 20px; }
+    .skill-chips-grid { padding: 0 20px 20px; }
 
-    .footer-contact { flex-direction: column; align-items: center; }
+    /* ─── Career ─── */
+    .cht-stop-dot { width: 36px; height: 36px; font-size: 0.9rem; }
+    .cht-panel { padding: 16px; }
+    .cht-card__highlight { font-size: 0.75rem; padding: 7px 10px; }
 
-    .projects-grid, .achievements-grid { grid-template-columns: 1fr; }
+    /* ─── Achievements ─── */
+    .achievements-grid { grid-template-columns: 1fr; }
 
-    .nav-content { padding: 10px 20px; }
+    /* ─── Footer ─── */
+    .footer-contact { flex-direction: column; align-items: center; gap: 12px; }
+
+    /* ─── Mobile menu bigger on tiny screens ─── */
+    .mobile-menu a { font-size: 1.6rem; }
 }
 
 

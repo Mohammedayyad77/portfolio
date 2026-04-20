@@ -34,6 +34,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // 0b. Hamburger / Mobile Menu
+    // ==========================================
+    const hamburger  = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMenu() {
+        hamburger.classList.add('open');
+        mobileMenu.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+        });
+    }
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            closeMenu();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+        });
+    });
+
+    // ==========================================
     // 1. Custom Cursor
     // ==========================================
     const cursorDot = document.getElementById('cursor-dot');

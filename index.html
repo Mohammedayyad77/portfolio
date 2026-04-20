@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Ayyad | AI & Computer Science Graduate</title>
+    <meta name="description" content="Portfolio of Mohammed Ayyad, a recent AI & Computer Science graduate specialized in machine learning algorithms, software engineering, and data science.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Animated Blob -->
+    <div id="blob"></div>
+    <div id="blob-blur"></div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">MA<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero fade-in">
+            <div class="hero-content">
+                <p class="greeting">Hi, I'm</p>
+                <h1>Mohammed <span>Ayyad</span></h1>
+                <h2 class="title type-cursor" id="typed-role"></h2>
+                <p class="summary">University of Birmingham (2:1 BSc) &mdash; First-class final year project in Machine Learning for Heart Condition Classification. Passionate about turning data into decisions and research into real-world systems.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:mohammed.ayyyad@gmail.com" class="btn primary magnetic"><i class="fa-solid fa-envelope"></i> Let's Connect</a>
+                    <a href="cv.pdf" download class="btn secondary magnetic" id="cv-download"><i class="fa-solid fa-download"></i> Download CV</a>
+                    <div class="socials">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" class="social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <span><i class="fa-solid fa-location-dot"></i> Birmingham, UK</span>
+                        <span><i class="fa-solid fa-phone"></i> +44 7535 252705</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card about-card">
+                <p>
+                    I am a recent graduate from the University of Birmingham with a 2:1 BSc in Artificial Intelligence and Computer Science, achieving a First in my final-year project focused on machine learning algorithms. 
+                </p>
+                <p>
+                    Throughout my degree, I developed a strong foundation in software engineering, artificial intelligence, machine learning, data science, and programming. This theoretical knowledge is complemented by practical experience through varied work and voluntary roles.
+                </p>
+                <p>
+                    I am passionate about applying technical knowledge to solve complex challenges, with a strong focus on efficiency, scalability, and performance. Standardising data, uncovering actionable insights, and building resilient systems is where I thrive.
+                </p>
+
+                <!-- About Stats -->
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <span class="stat-number">2:1</span>
+                        <span class="stat-label">BSc Classification</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="stat-number">1st</span>
+                        <span class="stat-label">FYP Grade</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Months at Rolls-Royce</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SKILLS SECTION — CREATIVE SHOWCASE           -->
+        <!-- ============================================= -->
+        <section id="skills" class="section fade-in">
+            <h2 class="section-title">Skills &amp; Expertise</h2>
+            <p class="skills-subtitle">A snapshot of my technical toolkit and the qualities I bring to every team.</p>
+
+            <div class="skills-showcase-grid">
+
+                <!-- Languages -->
+                <div class="skill-category-card glass-card zoom-in">
+                    <div class="skill-cat__accent skill-cat__accent--purple"></div>
+                    <div class="skill-cat__header">
+                        <div class="skill-cat__icon skill-cat__icon--purple">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-cat__title">Languages</h3>
+                            <p class="skill-cat__sub">Core programming languages</p>
+                        </div>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span><i class="fa-brands fa-python"></i> Python</span>
+                                <span class="skill-bar-level skill-bar-level--expert">Expert</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span><i class="fa-brands fa-java"></i> Java</span>
+                                <span class="skill-bar-level skill-bar-level--advanced">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="78"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span><i class="fa-solid fa-database"></i> SQL</span>
+                                <span class="skill-bar-level skill-bar-level--advanced">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="75"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span><i class="fa-solid fa-code"></i> C / C++</span>
+                                <span class="skill-bar-level skill-bar-level--intermediate">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="60"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span><i class="fa-solid fa-infinity"></i> Haskell</span>
+                                <span class="skill-bar-level skill-bar-level--intermediate">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="55"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Data Science -->
+                <div class="skill-category-card glass-card zoom-in">
+                    <div class="skill-cat__accent skill-cat__accent--gold"></div>
+                    <div class="skill-cat__header">
+                        <div class="skill-cat__icon skill-cat__icon--gold">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-cat__title">AI &amp; Data Science</h3>
+                            <p class="skill-cat__sub">From raw data to production models</p>
+                        </div>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span>Machine Learning</span>
+                                <span class="skill-bar-level skill-bar-level--expert">Expert</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill skill-bar-fill--gold" data-w="88"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span>Pandas &amp; NumPy</span>
+                                <span class="skill-bar-level skill-bar-level--expert">Expert</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill skill-bar-fill--gold" data-w="85"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span>scikit-learn</span>
+                                <span class="skill-bar-level skill-bar-level--advanced">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill skill-bar-fill--gold" data-w="80"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span>Tableau</span>
+                                <span class="skill-bar-level skill-bar-level--advanced">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill skill-bar-fill--gold" data-w="75"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-meta">
+                                <span>Power BI</span>
+                                <span class="skill-bar-level skill-bar-level--intermediate">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill skill-bar-fill--gold" data-w="65"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-category-card glass-card zoom-in">
+                    <div class="skill-cat__accent skill-cat__accent--teal"></div>
+                    <div class="skill-cat__header">
+                        <div class="skill-cat__icon skill-cat__icon--teal">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-cat__title">Tools &amp; Platforms</h3>
+                            <p class="skill-cat__sub">Dev environment &amp; workflow</p>
+                        </div>
+                    </div>
+                    <div class="skill-chips-grid">
+                        <div class="skill-chip">
+                            <i class="fa-brands fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fa-solid fa-arrows-spin"></i>
+                            <span>Agile</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fa-brands fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>macOS</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fa-brands fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <span>Scrum</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strengths -->
+                <div class="skill-category-card glass-card zoom-in">
+                    <div class="skill-cat__accent skill-cat__accent--pink"></div>
+                    <div class="skill-cat__header">
+                        <div class="skill-cat__icon skill-cat__icon--pink">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-cat__title">Strengths</h3>
+                            <p class="skill-cat__sub">What I bring to every team</p>
+                        </div>
+                    </div>
+                    <div class="skill-strength-list">
+                        <div class="skill-strength-item">
+                            <div class="skill-strength-dot skill-strength-dot--1"></div>
+                            <div>
+                                <span class="skill-strength-name"><i class="fa-solid fa-crown"></i> Leadership</span>
+                                <span class="skill-strength-desc">3× elected Student Representative</span>
+                            </div>
+                        </div>
+                        <div class="skill-strength-item">
+                            <div class="skill-strength-dot skill-strength-dot--2"></div>
+                            <div>
+                                <span class="skill-strength-name"><i class="fa-solid fa-comments"></i> Communication</span>
+                                <span class="skill-strength-desc">Presenting to senior stakeholders</span>
+                            </div>
+                        </div>
+                        <div class="skill-strength-item">
+                            <div class="skill-strength-dot skill-strength-dot--3"></div>
+                            <div>
+                                <span class="skill-strength-name"><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</span>
+                                <span class="skill-strength-desc">Data-driven, analytical mindset</span>
+                            </div>
+                        </div>
+                        <div class="skill-strength-item">
+                            <div class="skill-strength-dot skill-strength-dot--4"></div>
+                            <div>
+                                <span class="skill-strength-name"><i class="fa-solid fa-bolt"></i> Adaptability</span>
+                                <span class="skill-strength-desc">Thrives in fast-paced environments</span>
+                            </div>
+                        </div>
+                        <div class="skill-strength-item">
+                            <div class="skill-strength-dot skill-strength-dot--5"></div>
+                            <div>
+                                <span class="skill-strength-name"><i class="fa-solid fa-users"></i> Teamwork</span>
+                                <span class="skill-strength-desc">Cross-functional collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- CAREER SECTION — DOT RAIL + CARD PANEL       -->
+        <!-- ============================================= -->
+        <section id="career" class="section fade-in">
+            <h2 class="section-title">Career Journey</h2>
+            <p class="career-subtitle">A timeline of my professional growth &mdash; from first role to a prestigious internship and beyond.</p>
+
+            <!-- Timeline Rail -->
+            <div class="cht-rail-wrapper">
+                <button class="cht-nav cht-nav--prev" id="cht-prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="cht-rail">
+                    <div class="cht-rail-line"><div class="cht-rail-fill" id="cht-rail-fill"></div></div>
+                    <div class="cht-stop" data-index="0" tabindex="0" role="button" aria-label="Education 2021">
+                        <div class="cht-stop-dot cht-stop-dot--edu"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="cht-stop-year">2021</span>
+                        <span class="cht-stop-label">Education</span>
+                    </div>
+                    <div class="cht-stop" data-index="1" tabindex="0" role="button" aria-label="IT Support 2022">
+                        <div class="cht-stop-dot cht-stop-dot--work"><i class="fa-solid fa-headset"></i></div>
+                        <span class="cht-stop-year">2022</span>
+                        <span class="cht-stop-label">IT Support</span>
+                    </div>
+                    <div class="cht-stop" data-index="2" tabindex="0" role="button" aria-label="Student Rep 2022">
+                        <div class="cht-stop-dot cht-stop-dot--volunteer"><i class="fa-solid fa-users"></i></div>
+                        <span class="cht-stop-year">2022</span>
+                        <span class="cht-stop-label">Student Rep</span>
+                    </div>
+                    <div class="cht-stop cht-stop--featured" data-index="3" tabindex="0" role="button" aria-label="Rolls-Royce 2023">
+                        <div class="cht-stop-dot cht-stop-dot--featured"><i class="fa-solid fa-chart-line"></i></div>
+                        <span class="cht-stop-year">2023</span>
+                        <span class="cht-stop-label">Rolls-Royce</span>
+                    </div>
+                    <div class="cht-stop" data-index="4" tabindex="0" role="button" aria-label="Graduation 2025">
+                        <div class="cht-stop-dot cht-stop-dot--milestone"><i class="fa-solid fa-rocket"></i></div>
+                        <span class="cht-stop-year">2025</span>
+                        <span class="cht-stop-label">Graduation</span>
+                    </div>
+                </div>
+                <button class="cht-nav cht-nav--next" id="cht-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Card Stage -->
+            <div class="cht-stage" id="cht-stage">
+
+                <!-- Panel 0 — Education -->
+                <div class="cht-panel glass-card" data-panel="0">
+                    <div class="cht-panel-inner">
+                        <div class="cht-panel-left">
+                            <div class="cht-card-icon cht-card-icon--edu"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="cht-panel-meta">
+                                <div class="cvt-card__type cvt-card__type--edu"><i class="fa-solid fa-book-open"></i> Education</div>
+                                <span class="cvt-card__date"><i class="fa-regular fa-calendar"></i> Sept 2021 &mdash; Jul 2025</span>
+                            </div>
+                        </div>
+                        <div class="cht-panel-body">
+                            <h3 class="cvt-card__title">BSc AI &amp; Computer Science</h3>
+                            <h4 class="cvt-card__org"><i class="fa-solid fa-location-dot"></i> University of Birmingham, UK</h4>
+                            <div class="cht-card__highlight"><i class="fa-solid fa-trophy"></i> First-Class Final Year Project in ML</div>
+                            <ul class="cvt-card__details cvt-card__details--open">
+                                <li>Graduated with <strong>2:1 classification</strong> across all years.</li>
+                                <li><strong>First-Class FYP:</strong> ML Algorithms for Heart Condition Classification.</li>
+                                <li>Modules: Machine Learning, Algorithms, Databases, Software Engineering.</li>
+                            </ul>
+                            <div class="cvt-card__tags"><span>Machine Learning</span><span>Python</span><span>Java</span></div>
+                        </div>
+                        <div class="cht-panel-stats">
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">2:1</span><span class="cvt-impact-lbl">Classification</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">1st</span><span class="cvt-impact-lbl">FYP Grade</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">4</span><span class="cvt-impact-lbl">Years</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 1 — IT Support -->
+                <div class="cht-panel glass-card" data-panel="1">
+                    <div class="cht-panel-inner">
+                        <div class="cht-panel-left">
+                            <div class="cht-card-icon cht-card-icon--work"><i class="fa-solid fa-headset"></i></div>
+                            <div class="cht-panel-meta">
+                                <div class="cvt-card__type cvt-card__type--work"><i class="fa-solid fa-briefcase"></i> Work Experience</div>
+                                <span class="cvt-card__date"><i class="fa-regular fa-calendar"></i> Jun 2022 &mdash; Sept 2022</span>
+                            </div>
+                        </div>
+                        <div class="cht-panel-body">
+                            <h3 class="cvt-card__title">IT Technical Support</h3>
+                            <h4 class="cvt-card__org"><i class="fa-solid fa-location-dot"></i> Al Holoul Al Handasiya, Dubai UAE</h4>
+                            <div class="cht-card__highlight"><i class="fa-solid fa-shield-halved"></i> Zero data loss incidents across tenure</div>
+                            <ul class="cvt-card__details cvt-card__details--open">
+                                <li>Server backups &amp; data protection &mdash; zero data loss incidents.</li>
+                                <li>Diagnosed hardware, software, and network issues for 50+ users.</li>
+                                <li>Documented troubleshooting procedures and user guides.</li>
+                            </ul>
+                            <div class="cvt-card__tags"><span>Server Admin</span><span>Networking</span><span>Troubleshooting</span></div>
+                        </div>
+                        <div class="cht-panel-stats">
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">50+</span><span class="cvt-impact-lbl">Users</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">0</span><span class="cvt-impact-lbl">Data Loss</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2 — Student Rep -->
+                <div class="cht-panel glass-card" data-panel="2">
+                    <div class="cht-panel-inner">
+                        <div class="cht-panel-left">
+                            <div class="cht-card-icon cht-card-icon--volunteer"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                            <div class="cht-panel-meta">
+                                <div class="cvt-card__type cvt-card__type--volunteer"><i class="fa-solid fa-hand-holding-heart"></i> Voluntary Role</div>
+                                <span class="cvt-card__date"><i class="fa-regular fa-calendar"></i> Sept 2022 &mdash; May 2025</span>
+                            </div>
+                        </div>
+                        <div class="cht-panel-body">
+                            <h3 class="cvt-card__title">Student Representative</h3>
+                            <h4 class="cvt-card__org"><i class="fa-solid fa-location-dot"></i> University of Birmingham, UK</h4>
+                            <div class="cht-card__highlight"><i class="fa-solid fa-crown"></i> Elected 3 consecutive years</div>
+                            <ul class="cvt-card__details cvt-card__details--open">
+                                <li>Elected <strong>3 consecutive years</strong> to represent the student body.</li>
+                                <li>Presented structured feedback to academic committees.</li>
+                                <li>Collaborated with the Students&apos; Association on key initiatives.</li>
+                            </ul>
+                            <div class="cvt-card__tags"><span>Leadership</span><span>Public Speaking</span><span>Communication</span></div>
+                        </div>
+                        <div class="cht-panel-stats">
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">3</span><span class="cvt-impact-lbl">Years Elected</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">200+</span><span class="cvt-impact-lbl">Students</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3 — Rolls-Royce (featured) -->
+                <div class="cht-panel cht-panel--featured glass-card" data-panel="3">
+                    <div class="cvt-featured-badge"><i class="fa-solid fa-star"></i> Featured Role</div>
+                    <div class="cht-panel-inner">
+                        <div class="cht-panel-left">
+                            <div class="cht-card-icon cht-card-icon--featured"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="cht-panel-meta">
+                                <div class="cvt-card__type cvt-card__type--featured"><i class="fa-solid fa-briefcase"></i> Internship</div>
+                                <span class="cvt-card__date"><i class="fa-regular fa-calendar"></i> Jul 2023 &mdash; Aug 2024</span>
+                            </div>
+                        </div>
+                        <div class="cht-panel-body">
+                            <h3 class="cvt-card__title">Data Science Intern</h3>
+                            <h4 class="cvt-card__org"><i class="fa-solid fa-location-dot"></i> Rolls-Royce Motor Cars, Goodwood UK</h4>
+                            <div class="cht-card__highlight cht-card__highlight--gold"><i class="fa-solid fa-fire"></i> Delivered insights to C-suite leadership</div>
+                            <ul class="cvt-card__details cvt-card__details--open">
+                                <li>Delivered <strong>data-driven insights</strong> to senior leadership for strategic decisions.</li>
+                                <li>Analysed global sales datasets to identify trends and forecast demand.</li>
+                                <li>Built interactive <strong>dashboards &amp; automated pipelines</strong> in Tableau &amp; Python.</li>
+                                <li>Presented cross-functionally to sales, finance, &amp; marketing teams.</li>
+                            </ul>
+                            <div class="cvt-card__tags"><span>Python</span><span>Pandas</span><span>Tableau</span><span>SQL</span><span>Forecasting</span></div>
+                        </div>
+                        <div class="cht-panel-stats">
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">13</span><span class="cvt-impact-lbl">Months</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">Global</span><span class="cvt-impact-lbl">Market</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">Auto</span><span class="cvt-impact-lbl">Pipelines</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4 — Graduation -->
+                <div class="cht-panel glass-card" data-panel="4">
+                    <div class="cht-panel-inner">
+                        <div class="cht-panel-left">
+                            <div class="cht-card-icon cht-card-icon--milestone"><i class="fa-solid fa-rocket"></i></div>
+                            <div class="cht-panel-meta">
+                                <div class="cvt-card__type cvt-card__type--milestone"><i class="fa-solid fa-flag-checkered"></i> Milestone</div>
+                                <span class="cvt-card__date"><i class="fa-regular fa-calendar"></i> July 2025</span>
+                            </div>
+                        </div>
+                        <div class="cht-panel-body">
+                            <h3 class="cvt-card__title">Graduation &amp; What&apos;s Next</h3>
+                            <h4 class="cvt-card__org"><i class="fa-solid fa-location-dot"></i> Birmingham, UK &mdash; Open to Opportunities</h4>
+                            <div class="cht-card__highlight cht-card__highlight--teal"><i class="fa-solid fa-circle-check"></i> Actively seeking Data Science &amp; ML roles</div>
+                            <ul class="cvt-card__details cvt-card__details--open">
+                                <li>Graduated with a 2:1 BSc in AI &amp; Computer Science.</li>
+                                <li>Seeking roles in <strong>Data Science, ML Engineering</strong> or <strong>Software Engineering</strong>.</li>
+                                <li>Building skills in deep learning, cloud (AWS/GCP), and MLOps.</li>
+                            </ul>
+                            <div class="cvt-card__tags"><span>Open to Work</span><span>Data Science</span><span>ML Engineering</span></div>
+                        </div>
+                        <div class="cht-panel-stats">
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">2:1</span><span class="cvt-impact-lbl">BSc Degree</span></div>
+                            <div class="cvt-impact-stat"><span class="cvt-impact-num">Now</span><span class="cvt-impact-lbl">Available</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end cht-stage -->
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="section fade-in">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="glass-card project-card zoom-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <div class="project-links"><a href="#" target="_blank"><i class="fa-brands fa-github"></i></a></div>
+                    </div>
+                    <h3>Heart Condition Classification</h3>
+                    <p class="project-desc">First-Class FYP. Compared ML algorithms (SVM, Random Forest, Neural Networks) to classify heart conditions from clinical data with high accuracy.</p>
+                    <div class="project-tags"><span>Python</span><span>scikit-learn</span><span>Machine Learning</span><span>Healthcare AI</span></div>
+                </div>
+                <div class="glass-card project-card zoom-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="project-links"><a href="#" target="_blank"><i class="fa-brands fa-github"></i></a></div>
+                    </div>
+                    <h3>Sales Analytics Dashboard</h3>
+                    <p class="project-desc">Built at Rolls-Royce Motor Cars. Analysed large sales datasets to surface pricing trends and demand forecasts for senior stakeholders.</p>
+                    <div class="project-tags"><span>Python</span><span>Pandas</span><span>Tableau</span><span>SQL</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section fade-in">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="glass-card achievement-card zoom-in">
+                    <div class="achievement-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3>First-Class Final Year Project</h3>
+                    <p>ML Algorithms for Heart Condition Classification, graded First-Class by the University of Birmingham.</p>
+                </div>
+                <div class="glass-card achievement-card zoom-in">
+                    <div class="achievement-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>2:1 BSc AI &amp; CS</h3>
+                    <p>Graduated from the University of Birmingham with 2:1 in Artificial Intelligence and Computer Science.</p>
+                </div>
+                <div class="glass-card achievement-card zoom-in">
+                    <div class="achievement-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Student Representative</h3>
+                    <p>Elected for 3 consecutive years, driving evidence-based improvements alongside the Students Association.</p>
+                </div>
+                <div class="glass-card achievement-card zoom-in">
+                    <div class="achievement-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Rolls-Royce Internship</h3>
+                    <p>Competitive Data Science placement at Rolls-Royce Motor Cars delivering insights to senior teams.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content glass-card">
+            <div class="footer-logo">Mohammed Ayyad</div>
+            <p>Recent Graduate in Artificial Intelligence and Computer Science.</p>
+            <div class="footer-contact">
+                <a href="mailto:mohammed.ayyyad@gmail.com"><i class="fa-solid fa-envelope"></i> mohammed.ayyyad@gmail.com</a>
+                <span><i class="fa-solid fa-phone"></i> +44 7535 252705</span>
+                <span><i class="fa-solid fa-location-dot"></i> Birmingham, UK</span>
+            </div>
+            <p class="copyright">&copy; 2026 Mohammed Ayyad. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,62 +1,64 @@
 /* ================================================
-   DESIGN SYSTEM — Purple & Gold Premium Palette
+   DESIGN SYSTEM — Purple & Rose Gold Palette
    ================================================ */
 :root {
-    --bg-color: #0a0510;
-    --bg-surface: #110a1a;
-    --card-bg: rgba(255, 255, 255, 0.025);
-    --card-border: rgba(255, 255, 255, 0.06);
+    --bg-color: #0d0a14;
+    --bg-surface: #150f1e;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.07);
     --primary-color: #a855f7;
     --primary-glow: rgba(168, 85, 247, 0.3);
-    --secondary-color: #f59e0b;
-    --secondary-glow: rgba(245, 158, 11, 0.3);
+    --secondary-color: #e8a98a;
+    --secondary-glow: rgba(232, 169, 138, 0.25);
     --accent-color: #c084fc;
-    --success-color: #f59e0b;
-    --warning-color: #eab308;
-    --text-main: #f5f0ff;
-    --text-muted: #a89ec4;
-    --text-faint: #6b5f85;
+    --success-color: #34d399;
+    --warning-color: #fbbf24;
+    --text-main: #f0e8ff;
+    --text-muted: #b8a9d4;
+    --text-faint: #6b5a8a;
     --font-sans: 'Inter', sans-serif;
     --font-heading: 'Outfit', sans-serif;
-    --blob-opacity: 0.4;
-    --nav-bg: rgba(10, 5, 16, 0.88);
+    --blob-opacity: 0.18;
+    --nav-bg: rgba(13, 10, 20, 0.88);
+    --nav-scrolled-bg: rgba(13, 10, 20, 0.97);
     --tag-bg: rgba(168, 85, 247, 0.06);
-    --tag-hover-bg: rgba(168, 85, 247, 0.14);
-    --card-shadow: rgba(0, 0, 0, 0.4);
+    --tag-hover-bg: rgba(168, 85, 247, 0.12);
+    --card-shadow: rgba(0, 0, 0, 0.45);
     --card-hover-bg: rgba(168, 85, 247, 0.05);
-    --card-hover-border: rgba(168, 85, 247, 0.2);
-    --gradient-primary: linear-gradient(135deg, #a855f7, #f59e0b);
-    --gradient-subtle: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(245, 158, 11, 0.1));
+    --card-hover-border: rgba(168, 85, 247, 0.25);
+    --gradient-primary: linear-gradient(135deg, #a855f7, #e8a98a);
+    --gradient-subtle: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(232, 169, 138, 0.07));
     /* Career-specific */
-    --career-line: linear-gradient(to bottom, #a855f7, #f59e0b, #c084fc);
+    --career-line: linear-gradient(to right, #a855f7, #e8a98a);
     --career-dot-size: 56px;
     --career-card-radius: 20px;
 }
 
 [data-theme="light"] {
-    --bg-color: #faf7ff;
+    --bg-color: #faf5ff;
     --bg-surface: #ffffff;
-    --card-bg: rgba(168, 85, 247, 0.04);
-    --card-border: rgba(168, 85, 247, 0.1);
+    --card-bg: rgba(88, 28, 135, 0.03);
+    --card-border: rgba(88, 28, 135, 0.08);
     --primary-color: #9333ea;
-    --primary-glow: rgba(147, 51, 234, 0.15);
-    --secondary-color: #d97706;
-    --secondary-glow: rgba(217, 119, 6, 0.15);
+    --primary-glow: rgba(147, 51, 234, 0.18);
+    --secondary-color: #c2714f;
+    --secondary-glow: rgba(194, 113, 79, 0.15);
     --accent-color: #a855f7;
-    --success-color: #d97706;
-    --warning-color: #ca8a04;
+    --success-color: #059669;
+    --warning-color: #d97706;
     --text-main: #1a0a2e;
-    --text-muted: #5b4a78;
-    --text-faint: #9181a8;
-    --blob-opacity: 0.15;
-    --nav-bg: rgba(250, 247, 255, 0.9);
+    --text-muted: #4a3466;
+    --text-faint: #9575b0;
+    --blob-opacity: 0.08;
+    --nav-bg: rgba(250, 245, 255, 0.92);
+    --nav-scrolled-bg: rgba(250, 245, 255, 0.98);
     --tag-bg: rgba(147, 51, 234, 0.05);
     --tag-hover-bg: rgba(147, 51, 234, 0.1);
-    --card-shadow: rgba(147, 51, 234, 0.06);
-    --card-hover-bg: rgba(255, 255, 255, 0.95);
-    --card-hover-border: rgba(147, 51, 234, 0.2);
-    --gradient-primary: linear-gradient(135deg, #9333ea, #d97706);
-    --gradient-subtle: linear-gradient(135deg, rgba(147, 51, 234, 0.08), rgba(217, 119, 6, 0.05));
+    --card-shadow: rgba(88, 28, 135, 0.1);
+    --card-hover-bg: rgba(255, 255, 255, 0.98);
+    --card-hover-border: rgba(147, 51, 234, 0.3);
+    --gradient-primary: linear-gradient(135deg, #9333ea, #c2714f);
+    --gradient-subtle: linear-gradient(135deg, rgba(147, 51, 234, 0.07), rgba(194, 113, 79, 0.05));
 }
 
 /* ================================================
@@ -232,9 +234,9 @@ nav {
 }
 
 nav.scrolled .nav-content {
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(168, 85, 247, 0.05);
-    border-color: rgba(168, 85, 247, 0.1);
-    background: rgba(10, 5, 16, 0.96);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(168, 85, 247, 0.08);
+    border-color: rgba(168, 85, 247, 0.15);
+    background: var(--nav-scrolled-bg);
 }
 
 .logo {
@@ -273,8 +275,8 @@ nav.scrolled .nav-content {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--text-main);
-    background: rgba(168, 85, 247, 0.12);
+    color: var(--primary-color);
+    background: rgba(168, 85, 247, 0.08);
 }
 
 /* ================================================
@@ -691,9 +693,9 @@ main {
     flex-shrink: 0;
 }
 .skill-cat__accent--purple { background: linear-gradient(90deg, #a855f7, #c084fc); }
-.skill-cat__accent--gold   { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-.skill-cat__accent--teal   { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
-.skill-cat__accent--pink   { background: linear-gradient(90deg, #ec4899, #f472b6); }
+.skill-cat__accent--gold   { background: linear-gradient(90deg, #e8a98a, #f0c5a8); }
+.skill-cat__accent--teal   { background: linear-gradient(90deg, #c084fc, #a855f7); }
+.skill-cat__accent--pink   { background: linear-gradient(90deg, #d4896a, #e8a98a); }
 
 /* Inner padding wrapper */
 .skill-cat__header {
@@ -720,28 +722,28 @@ main {
 }
 
 .skill-cat__icon--purple {
-    background: rgba(168, 85, 247, 0.12);
+    background: rgba(168, 85, 247, 0.1);
     border: 1px solid rgba(168, 85, 247, 0.2);
     color: var(--primary-color);
     box-shadow: 0 4px 15px rgba(168, 85, 247, 0.15);
 }
 .skill-cat__icon--gold {
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    color: var(--secondary-color);
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+    background: rgba(232, 169, 138, 0.1);
+    border: 1px solid rgba(232, 169, 138, 0.2);
+    color: #e8a98a;
+    box-shadow: 0 4px 15px rgba(232, 169, 138, 0.12);
 }
 .skill-cat__icon--teal {
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px solid rgba(6, 182, 212, 0.2);
-    color: #22d3ee;
-    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.15);
+    background: rgba(192, 132, 252, 0.1);
+    border: 1px solid rgba(192, 132, 252, 0.2);
+    color: #c084fc;
+    box-shadow: 0 4px 15px rgba(192, 132, 252, 0.12);
 }
 .skill-cat__icon--pink {
-    background: rgba(236, 72, 153, 0.1);
-    border: 1px solid rgba(236, 72, 153, 0.2);
-    color: #f472b6;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.15);
+    background: rgba(212, 137, 106, 0.1);
+    border: 1px solid rgba(212, 137, 106, 0.2);
+    color: #d4896a;
+    box-shadow: 0 4px 15px rgba(212, 137, 106, 0.12);
 }
 
 .skill-cat__title {
@@ -798,9 +800,9 @@ main {
     border-radius: 20px;
 }
 .skill-bar-level--expert {
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(232, 169, 138, 0.1);
     color: var(--secondary-color);
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(232, 169, 138, 0.25);
 }
 .skill-bar-level--advanced {
     background: rgba(168, 85, 247, 0.1);
@@ -830,8 +832,8 @@ main {
 }
 
 .skill-bar-fill--gold {
-    background: linear-gradient(90deg, #f59e0b, #fbbf24);
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    background: linear-gradient(90deg, #e8a98a, #f0c5a8);
+    box-shadow: 0 0 10px rgba(232, 169, 138, 0.4);
 }
 
 /* ---- Chip Grid (Tools card) ---- */
@@ -859,15 +861,18 @@ main {
 }
 
 .skill-chip:hover {
-    background: rgba(6, 182, 212, 0.07);
-    border-color: rgba(6, 182, 212, 0.2);
+    background: rgba(168, 85, 247, 0.07);
+    border-color: rgba(232, 169, 138, 0.25);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.1);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.12);
 }
 
 .skill-chip i {
     font-size: 1.4rem;
-    color: #22d3ee;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .skill-chip span {
@@ -898,8 +903,8 @@ main {
 }
 
 .skill-strength-item:hover {
-    background: rgba(236, 72, 153, 0.05);
-    border-color: rgba(236, 72, 153, 0.15);
+    background: rgba(168, 85, 247, 0.06);
+    border-color: rgba(232, 169, 138, 0.2);
     transform: translateX(4px);
 }
 
@@ -909,11 +914,11 @@ main {
     border-radius: 50%;
     flex-shrink: 0;
 }
-.skill-strength-dot--1 { background: #a855f7; box-shadow: 0 0 8px rgba(168,85,247,0.6); }
-.skill-strength-dot--2 { background: #f59e0b; box-shadow: 0 0 8px rgba(245,158,11,0.6); }
-.skill-strength-dot--3 { background: #22d3ee; box-shadow: 0 0 8px rgba(6,182,212,0.6); }
-.skill-strength-dot--4 { background: #f472b6; box-shadow: 0 0 8px rgba(236,72,153,0.6); }
-.skill-strength-dot--5 { background: #c084fc; box-shadow: 0 0 8px rgba(192,132,252,0.6); }
+.skill-strength-dot--1 { background: #a855f7; box-shadow: 0 0 8px rgba(168,85,247,0.5); }
+.skill-strength-dot--2 { background: #e8a98a; box-shadow: 0 0 8px rgba(232,169,138,0.5); }
+.skill-strength-dot--3 { background: #c084fc; box-shadow: 0 0 8px rgba(192,132,252,0.5); }
+.skill-strength-dot--4 { background: #d4896a; box-shadow: 0 0 8px rgba(212,137,106,0.5); }
+.skill-strength-dot--5 { background: #f0c5a8; box-shadow: 0 0 8px rgba(240,197,168,0.5); }
 
 .skill-strength-name {
     display: flex;
